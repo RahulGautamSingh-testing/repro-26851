@@ -1,0 +1,23 @@
+[build-system]
+requires = ["poetry-core==1.8.1"]
+build-backend = "poetry.core.masonry.api"
+
+[tool]
+  [tool.commitizen]
+  version_provider = "poetry"
+  major_version_zero = true
+
+  [tool.poetry]
+  name = "Template Repo"
+  version = "0.0.0"
+  description = "Template Repository for ScribeMD"
+  authors = ["Kurt von Laven <kurt.von.laven@gmail.com>"]
+  license = "MIT"
+
+  [tool.poetry.dependencies]
+  # Keep in sync with .pre-commit-config.yaml and .tool-versions.
+  python = "==3.12.1"
+
+  [tool.poetry.group.dev.dependencies]
+  commitizen = "==3.13.0" # Keep in sync with .pre-commit-config.yaml.
+  pre-commit = "==3.6.0"
