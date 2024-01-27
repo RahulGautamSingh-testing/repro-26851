@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "rangeStrategy": "pin",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^pyproject\\.toml$"],
+      "matchStrings": [
+        "(?<depName>poetry-core)>=(?<currentValue>(\\d+\\.){2}\\d+)"
+      ],
+      "datasourceTemplate": "pypi",
+      "depTypeTemplate": "dev-dependencies"
+    },
+  ],
+  "separateMajorMinor": false
+}
